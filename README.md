@@ -14,7 +14,7 @@ Follow these steps to set up and use the API:
 
    ```shell
    git clone (link)
-   cd backend-technical-test
+   cd event_management
    ```
 2. Configure .env with .envexample
 
@@ -35,10 +35,12 @@ Follow these steps to set up and use the API:
 * docker build -t my-postgres-image .
 * docker run -d --name my-postgres-container -p 5432:5432 my-postgres-image
 
-### Migrations
+### Migrations and load data
 
     $ docker-compose -f local.yml run --rm django python manage.py makemigrations
     $ docker-compose -f local.yml run --rm django python manage.py migrate
+    $ docker-compose -f local.yml run --rm django python manage.py loaddata event_fixture.json
+
 
 
 ## Contact

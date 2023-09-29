@@ -1,0 +1,37 @@
+[
+    {
+        "model": "events.eventtype",
+        "pk": 1,
+        "fields": {
+            "name": "Evento tipo 1"
+        }
+    },
+    {
+        "model": "events.eventtype",
+        "pk": 2,
+        "fields": {
+            "name": "Evento tipo 2"
+        }
+    },
+    {
+        "model": "events.eventtype",
+        "pk": 2,
+        "fields": {
+            "name": "Evento tipo 3"
+        }
+    },
+    {
+        "model": "events.eventstatus",
+        "pk": 1,
+        "fields": {
+            "name": "Pendiente"
+        }
+    },
+    {
+        "model": "events.eventstatus",
+        "pk": 1,
+        "fields": {
+            "name": "Revisado"
+        }
+    }
+]

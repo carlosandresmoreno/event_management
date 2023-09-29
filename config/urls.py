@@ -1,9 +1,9 @@
 from django.contrib import admin
-from django.urls import path
 from .config_swagger import urlpatternsSwagger
+from django.urls import path, include
+
 
 urlpatterns = urlpatternsSwagger + [
     path("admin/", admin.site.urls),
-    # path("api-sigi/", include("apps.plan.routers")),
-    # path("api-sigi/", include("apps.orders.routers")),
+    path("api/", include("apps.events.routers")),
 ]
