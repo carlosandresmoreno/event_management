@@ -1,0 +1,12 @@
+version: '3'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: compose/Django/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.local

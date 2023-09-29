@@ -1,0 +1,32 @@
+# Here I am going to put a possible CI whith gitlab to add something elegant to the test, it is not much but it is honest work
+stages:
+  - publish 
+variables:
+  # DOCKER_REGISTRY: aqui uno pone como a donde apunta
+  APP_NAME: event_management
+  # DOCKER_HOST: tcp://docker:ELPUERT
+
+publish:
+  stage: publish
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  services:
+    - docker:dind
+  before_script:
+    - amazon-linux-extras install docker
+    - aws --version
+    - docker --version
+    - aws sts get-caller-identity
+    #- aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    # aqui se ponen las credenciales, elimine pues por que no tengo
+  script:
+    - echo "Building Image" 
+    - docker build -t ecr-peprd01:eventmanaged.
+    # aca se publica como donde uno quiera, tambien lo elimine por que no tengo donde
+    - echo "Finalizado"
+  only: 
+  - produccion
+
+
+
