@@ -1,9 +1,11 @@
-FROM postgres:13
+version: '3'
 
-ENV POSTGRES_DB=mydatabase
-ENV POSTGRES_USER=myuser
-ENV POSTGRES_PASSWORD=mypassword
-
-EXPOSE 5432
-
-CMD ["postgres"]
+services:
+  postgres:
+    image: postgres:13  # Utiliza la versión de PostgreSQL que desees
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWD}
+    ports:
+      - "${DB_PORT}:5432"

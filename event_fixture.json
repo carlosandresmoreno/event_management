@@ -15,7 +15,7 @@
     },
     {
         "model": "events.eventtype",
-        "pk": 2,
+        "pk": 3,
         "fields": {
             "name": "Evento tipo 3"
         }
@@ -29,7 +29,7 @@
     },
     {
         "model": "events.eventstatus",
-        "pk": 1,
+        "pk": 2,
         "fields": {
             "name": "Revisado"
         }
